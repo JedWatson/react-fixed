@@ -1,0 +1,52 @@
+{
+  "name": "react-fixed",
+  "version": "0.0.0",
+  "description": "A lightweight component that sticks to the bottom of the window while scrolling. Neat for toolbars.",
+  "main": "lib/Fixed.js",
+  "author": "Jed Watson",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JedWatson/react-fixed.git"
+  },
+  "dependencies": {
+    "blacklist": "^1.1.2",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^2.0.2",
+    "babel-jest": "^5.0.1",
+    "eslint": "^0.18.0",
+    "gulp": "^3.8.11",
+    "jest-cli": "^0.4.0",
+    "react": ">=0.12.0",
+    "react-component-gulp-tasks": "^0.4.4"
+  },
+  "peerDependencies": {
+    "react": ">=0.12.0"
+  },
+  "browserify-shim": {
+    "react": "global:React"
+  },
+  "scripts": {
+    "test": "jest; true",
+    "lint": "eslint ./; true"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ],
+    "testPathDirs": [
+      "<rootDir>/src"
+    ]
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "sticky",
+    "fixed",
+    "scroll",
+    "toolbar"
+  ]
+}
