@@ -30,8 +30,10 @@
     "react": "global:React"
   },
   "scripts": {
+    "build": "gulp clean && NODE_ENV=production gulp build",
+    "lint": "eslint .",
     "test": "jest; true",
-    "lint": "eslint ./; true"
+    "watch": "gulp watch:lib"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
