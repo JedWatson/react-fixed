@@ -4,7 +4,7 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var React = (typeof window !== "undefined" ? window.React : typeof global !== "undefined" ? global.React : null),
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null),
     xtend = require('xtend'),
     blacklist = require('blacklist');
 
@@ -25,9 +25,9 @@ var Fixed = React.createClass({
 
 		// Bail in IE8 because React doesn't support the onScroll event in that browser
 		// Conveniently (!) IE8 doesn't have window.getComputedStyle which we also use here
-		if (!window.getComputedStyle) {
-			return;
-		}var fixed = this.refs.fixed.getDOMNode();
+		if (!window.getComputedStyle) return;
+
+		var fixed = this.refs.fixed.getDOMNode();
 
 		this.windowSize = this.getWindowSize();
 
@@ -42,6 +42,11 @@ var Fixed = React.createClass({
 		window.addEventListener('resize', this.recalcPosition, false);
 
 		this.recalcPosition();
+	},
+
+	componentWillUnmount: function componentWillUnmount() {
+		window.removeEventListener('scroll', this.recalcPosition, false);
+		window.removeEventListener('resize', this.recalcPosition, false);
 	},
 
 	getWindowSize: function getWindowSize() {

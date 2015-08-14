@@ -37,6 +37,11 @@ var Fixed = React.createClass({
 		
 		this.recalcPosition();
 	},
+
+  componentWillUnmount: function() {
+    window.removeEventListener('scroll', this.recalcPosition, false);
+    window.removeEventListener('resize', this.recalcPosition, false);
+  },
 	
 	getWindowSize: function() {
 		return {
