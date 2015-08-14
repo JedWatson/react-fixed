@@ -12,6 +12,11 @@ var Fixed = React.createClass({
 
 	displayName: 'Fixed',
 
+	propTypes: {
+		children: React.PropTypes.node,
+		style: React.PropTypes.object
+	},
+
 	getInitialState: function getInitialState() {
 		return {
 			position: 'relative',
