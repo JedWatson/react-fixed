@@ -1,6 +1,6 @@
 {
   "name": "react-fixed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight component that sticks to the bottom of the window while scrolling. Neat for toolbars.",
   "main": "lib/Fixed.js",
   "author": "Jed Watson",
