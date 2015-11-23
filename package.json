@@ -20,11 +20,11 @@
     "eslint-plugin-react": "^3.2.2",
     "gulp": "^3.9.0",
     "jest-cli": "^0.4.18",
-    "react": ">=0.12.0",
+    "react": "^0.14.0",
     "react-component-gulp-tasks": "^0.7.0"
   },
   "peerDependencies": {
-    "react": ">=0.12.0"
+    "react": "^0.14.0"
   },
   "browserify-shim": {
     "react": "global:React"
