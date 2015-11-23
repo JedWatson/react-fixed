@@ -32,7 +32,7 @@ var Fixed = React.createClass({
 		// Conveniently (!) IE8 doesn't have window.getComputedStyle which we also use here
 		if (!window.getComputedStyle) return;
 
-		var fixed = this.refs.fixed.getDOMNode();
+		var fixed = this.refs.fixed;
 
 		this.windowSize = this.getWindowSize();
 
@@ -62,8 +62,8 @@ var Fixed = React.createClass({
 	},
 
 	recalcPosition: function recalcPosition() {
-		var wrapper = this.refs.wrapper.getDOMNode();
-		var fixed = this.refs.fixed.getDOMNode();
+		var wrapper = this.refs.wrapper;
+		var fixed = this.refs.fixed;
 
 		this.fixedSize.x = wrapper.offsetWidth;
 
