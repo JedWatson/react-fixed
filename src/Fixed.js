@@ -1,6 +1,6 @@
-var React = require('react'),
-	xtend = require('xtend'),
-	blacklist = require('blacklist');
+var React = require('react');
+var xtend = require('xtend');
+var blacklist = require('blacklist');
 
 var Fixed = React.createClass({
 
@@ -8,7 +8,7 @@ var Fixed = React.createClass({
 
 	propTypes: {
 		children: React.PropTypes.node,
-		style: React.PropTypes.object
+		style: React.PropTypes.object,
 	},
 
 	getInitialState: function() {
@@ -16,7 +16,7 @@ var Fixed = React.createClass({
 			position: 'relative',
 			width: 'auto',
 			height: 'auto',
-			top: 0
+			top: 0,
 		};
 	},
 
@@ -34,7 +34,7 @@ var Fixed = React.createClass({
 
 		this.fixedSize = {
 			x: fixed.offsetWidth,
-			y: fixed.offsetHeight + parseInt(fixedStyle.marginTop || '0')
+			y: fixed.offsetHeight + parseInt(fixedStyle.marginTop || '0'),
 		};
 
 		window.addEventListener('scroll', this.recalcPosition, false);
@@ -78,7 +78,7 @@ var Fixed = React.createClass({
 
 		var newState = {
 			width: this.fixedSize.x,
-			height: this.fixedSize.y
+			height: this.fixedSize.y,
 		};
 
 		if (viewY > maxY && (sizeChanged || this.mode !== 'inline')) {
@@ -97,14 +97,14 @@ var Fixed = React.createClass({
 	render: function() {
 		var wrapperStyle = {
 			position: 'relative',
-			height: this.state.height
+			height: this.state.height,
 		};
 		var fixedProps = blacklist(this.props, 'children', 'style');
 		var fixedStyle = xtend(this.props.style || {}, {
 			position: this.state.position,
 			top: this.state.top,
 			width: this.state.width,
-			height: this.state.height
+			height: this.state.height,
 		});
 		return (
 			<div ref="wrapper" style={wrapperStyle}>
