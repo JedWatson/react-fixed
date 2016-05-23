@@ -14,13 +14,9 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^4.0.5",
-    "babel-jest": "^5.3.0",
     "eslint": "^1.1.0",
     "eslint-plugin-react": "^3.2.2",
     "gulp": "^3.9.0",
-    "jest-cli": "^0.4.18",
-    "react": "^0.14.0",
     "react-component-gulp-tasks": "^0.7.0"
   },
   "peerDependencies": {
@@ -32,17 +28,8 @@
   "scripts": {
     "build": "gulp clean && NODE_ENV=production gulp build",
     "lint": "eslint .",
-    "test": "jest; true",
+    "test": "npm run lint",
     "watch": "gulp watch:lib"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ],
-    "testPathDirs": [
-      "<rootDir>/src"
-    ]
   },
   "keywords": [
     "react",
