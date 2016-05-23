@@ -11,7 +11,7 @@ var Fixed = React.createClass({
 		style: React.PropTypes.object,
 	},
 
-	getInitialState: function() {
+	getInitialState: function () {
 		return {
 			position: 'relative',
 			width: 'auto',
@@ -20,7 +20,7 @@ var Fixed = React.createClass({
 		};
 	},
 
-	componentDidMount: function() {
+	componentDidMount: function () {
 
 		// Bail in IE8 because React doesn't support the onScroll event in that browser
 		// Conveniently (!) IE8 doesn't have window.getComputedStyle which we also use here
@@ -43,21 +43,20 @@ var Fixed = React.createClass({
 		this.recalcPosition();
 	},
 
-	componentWillUnmount: function() {
+	componentWillUnmount: function () {
 		window.removeEventListener('scroll', this.recalcPosition, false);
 		window.removeEventListener('resize', this.recalcPosition, false);
 	},
 
-	getWindowSize: function() {
+	getWindowSize: function () {
 		return {
 			x: window.innerWidth,
-			y: window.innerHeight
+			y: window.innerHeight,
 		};
 	},
 
-	recalcPosition: function() {
+	recalcPosition: function () {
 		var wrapper = this.refs.wrapper;
-		var fixed = this.refs.fixed;
 
 		this.fixedSize.x = wrapper.offsetWidth;
 
@@ -94,7 +93,7 @@ var Fixed = React.createClass({
 		}
 	},
 
-	render: function() {
+	render: function () {
 		var wrapperStyle = {
 			position: 'relative',
 			height: this.state.height,
@@ -111,7 +110,7 @@ var Fixed = React.createClass({
 				<div ref="fixed" style={fixedStyle} {...fixedProps}>{this.props.children}</div>
 			</div>
 		);
-	}
+	},
 });
 
 module.exports = Fixed;
