@@ -11,13 +11,14 @@
   },
   "dependencies": {
     "blacklist": "^1.1.2",
-    "xtend": "^4.0.0"
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
-    "eslint": "^1.1.0",
-    "eslint-plugin-react": "^3.2.2",
-    "gulp": "^3.9.0",
-    "react-component-gulp-tasks": "^0.7.0"
+    "eslint": "^2.10.2",
+    "eslint-plugin-react": "^5.1.1",
+    "gulp": "^3.9.1",
+    "react": "^15.1.0",
+    "react-component-gulp-tasks": "^0.7.7"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
